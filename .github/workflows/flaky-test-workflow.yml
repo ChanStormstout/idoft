@@ -8,7 +8,12 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3 # 更新到最新版本
+
+    - name: Set up Maven
+      run: |
+        sudo apt update
+        sudo apt install -y maven
 
     - name: Set up JDK
       uses: actions/setup-java@v2
